@@ -1,9 +1,13 @@
 import { useRef, useEffect } from "react";
 import { useActions } from "../../hooks/useActions";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
 const RepositoriesList:React.FC = () => {
 	const refTerm = useRef<HTMLInputElement>(null);
 	const { searchRepositories }  = useActions();
+	const {data, loading, error} = useTypedSelector((state) => state.repositories);
+
+	console.log(loading, error, data);
 
 	useEffect(() => {
 		if( refTerm.current ){
@@ -16,8 +20,8 @@ const RepositoriesList:React.FC = () => {
 		if( refTerm.current?.value ){
 			const text = refTerm.current?.value;
 			refTerm.current.value = '';
+			console.log(`text is: ${text}`)
 			searchRepositories(text);
-
 		}
 	};
 
