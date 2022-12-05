@@ -4,7 +4,7 @@ import { actionsCreators } from "../../state";
 
 const RepositoriesList:React.FC = () => {
 	const refTerm = useRef<HTMLInputElement>(null);
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		if( refTerm.current ){
@@ -18,7 +18,7 @@ const RepositoriesList:React.FC = () => {
 			const text = refTerm.current?.value;
 			console.log(text)
 			refTerm.current.value = '';
-			// dispatch(actionsCreators.searchRepositories(text));
+			dispatch(actionsCreators.searchRepositories(text) as any);
 
 		}
 	};

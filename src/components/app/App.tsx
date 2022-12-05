@@ -5,11 +5,11 @@ import { store } from "../../state";
 
 const App: React.FC = () => {
 	return (
-		// <Provider store={store}>
+		<Provider store={store}>
 			<div className="container">
 				<RepositoriesList />
 			</div>
-		// </Provider>
+		</Provider>
 	);
 };
 export default App;
