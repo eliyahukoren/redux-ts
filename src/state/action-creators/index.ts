@@ -12,18 +12,21 @@ export const searchRepositories = (text: string) => {
 		});
 
 		try {
+
 			const { data } = await axios.get(url, {
 				params: { text },
 			});
 
-			const names = data.object.map((result: any) => {
-				return result.package.name
-			});
+			if( data?.objects ){
+				const names = data.objects.map((result: any) => {
+					return result.package.name
+				});
 
-			dispatch({
-				type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
-				payload: names
-			});
+				dispatch({
+					type: ActionType.SEARCH_REPOSITORIES_SUCCESS,
+					payload: names
+				});
+			}
 
 		} catch (err) {
 			if (err instanceof Error) {
