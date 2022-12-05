@@ -16,4 +16,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-![Screenshot](redux-ts.png?raw=true "Title")
+Home
+![Screenshot](redux-ts-1.png?raw=true "Home")
+
+Not found package
+![Screenshot](redux-ts-2.png?raw=true "Not found package")
+
+Packages list
+![Screenshot](redux-ts-3.png?raw=true "Packages list")
+
+Error
+![Screenshot](redux-ts-4.png?raw=true "Error")
