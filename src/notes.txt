@@ -21,3 +21,12 @@ Option #2
           }
         }
     ...
+
+
+In the upcoming lecture, we will be adding some code to our RepositoriesList component. You will likely see a big error such as this:
+
+Argument of type '(dispatch: Dispatch<Action>) => Promise<void>' is not assignable to parameter of type 'AnyAction'
+
+This is caused by some changes to the React Redux library in the latest versions. The code that is throwing the error will not be used at all and will be refactored in the very next video. So, you are ok to use as any to suppress the TS error for this lecture:
+
+dispatch(actionCreators.searchRepositories(term) as any);
