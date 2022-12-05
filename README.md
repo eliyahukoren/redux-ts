@@ -1,5 +1,7 @@
 # Redux Typescript
 
+In this project i'm using [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) for styling.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -14,4 +16,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-![Screenshot](public/logo192.png?raw=true "Title")
+![Screenshot](redux-ts.png?raw=true "Title")
