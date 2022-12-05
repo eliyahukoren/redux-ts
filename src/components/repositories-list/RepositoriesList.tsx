@@ -1,8 +1,32 @@
+import { useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { actionsCreators } from "../../state";
+
 const RepositoriesList:React.FC = () => {
+	const refTerm = useRef<HTMLInputElement>(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if( refTerm.current ){
+			refTerm.current.focus();
+		}
+	}, []);
+
+	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		if( refTerm.current?.value ){
+			const text = refTerm.current?.value;
+			console.log(text)
+			refTerm.current.value = '';
+			dispatch(actionsCreators.searchRepositories(text));
+
+		}
+	};
+
 	return (
 		<div className="row justify-content-center my-auto mt-5">
 			<div className="col-sm-6">
-				<form>
+				<form onSubmit={onSubmit}>
 					<div className="card text-center shadow-lg">
 						<div className="card-body">
 							<h5 className="card-title">Search for a repository</h5>
@@ -13,6 +37,7 @@ const RepositoriesList:React.FC = () => {
 							</p>
 
 							<input
+								ref={refTerm}
 								type="text"
 								className="form-control mb-3"
 								placeholder="Type package name"
