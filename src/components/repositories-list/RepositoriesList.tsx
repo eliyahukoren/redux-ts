@@ -1,10 +1,9 @@
 import { useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { actionsCreators } from "../../state";
+import { useActions } from "../../hooks/useActions";
 
 const RepositoriesList:React.FC = () => {
 	const refTerm = useRef<HTMLInputElement>(null);
-	const dispatch = useDispatch();
+	const { searchRepositories }  = useActions();
 
 	useEffect(() => {
 		if( refTerm.current ){
@@ -18,7 +17,7 @@ const RepositoriesList:React.FC = () => {
 			const text = refTerm.current?.value;
 			console.log(text)
 			refTerm.current.value = '';
-			dispatch(actionsCreators.searchRepositories(text) as any);
+			searchRepositories(text);
 
 		}
 	};
