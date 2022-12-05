@@ -15,7 +15,6 @@ const RepositoriesList:React.FC = () => {
 		e.preventDefault();
 		if( refTerm.current?.value ){
 			const text = refTerm.current?.value;
-			console.log(text)
 			refTerm.current.value = '';
 			searchRepositories(text);
 
