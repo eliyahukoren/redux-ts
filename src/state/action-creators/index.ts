@@ -5,7 +5,7 @@ import { Action } from "../actions";
 
 const url = "https://registry.npmjs.org/-/v1/search";
 
-const searchRepositories = (text: string) => {
+export const searchRepositories = (text: string) => {
 	return async (dispatch: Dispatch<Action>) => {
 		dispatch({
 			type: ActionType.SEARCH_REPOSITORIES,
